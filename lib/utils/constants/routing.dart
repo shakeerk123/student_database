@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:student_database/view/home/home.dart';
-
 import '../../view/add_student/add_screen.dart';
 import '../../view/details_student/details.dart';
 import '../../view/student_list.dart/students_screen.dart';
@@ -11,12 +10,7 @@ class AppRouter {
   AppRouter._privateConstructor();
   static final AppRouter _instance = AppRouter._privateConstructor();//Singleton pattern, used to manage  single global instance of a class.
   static AppRouter get instance => _instance;
-  GoRouter router = GoRouter(routes: [
-    // GoRoute(
-    //   name: RoutingConstants.settingsRouteName,
-    //   path: RoutingConstants.settingsRoutePath,
-    //   pageBuilder: (context, state) => MaterialPage(child: Settings()),
-    // ),
+  GoRouter router = GoRouter(routes: [  
     GoRoute(
       name: RoutingConstants.homeRouteName,
       path: RoutingConstants.homeRoutePath,
