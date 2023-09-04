@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:student_database/utils/constants/constants.dart';
 
-import '../../../data/student_database.dart';
+import '../../../model/student_database.dart';
 import '../../studentlist/bloc/students_bloc.dart';
 
 part 'details_event.dart';

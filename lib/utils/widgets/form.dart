@@ -3,9 +3,11 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:student_database/features/addstudent/bloc/add_student_bloc.dart';
+
 import 'package:student_database/utils/constants/constants.dart';
-import '../../features/details/bloc/details_bloc.dart';
+
+import '../../controller/addstudent/bloc/add_student_bloc.dart';
+import '../../controller/details/bloc/details_bloc.dart';
 
 // ignore: must_be_immutable
 class CustomFormWidget extends StatelessWidget {

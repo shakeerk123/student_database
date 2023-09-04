@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../data/student_database.dart';
+import '../../../model/student_database.dart';
 part 'add_student_event.dart';
 part 'add_student_state.dart';
 

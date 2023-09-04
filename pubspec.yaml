@@ -45,6 +45,10 @@ dependencies:
   go_router: ^10.0.0
   flutter_slidable: ^3.0.0
   liquid_pull_to_refresh: ^3.0.1
+  shared_preferences: ^2.2.1
+  hydrated_bloc: ^9.1.2
+  equatable: ^2.0.5
+  path_provider: ^2.1.1
   
 
 dev_dependencies:

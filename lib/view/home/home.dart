@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:student_database/features/home/bloc/home_bloc.dart';
+import 'package:student_database/controller/theme/bloc/theme_bloc.dart';
 import 'package:student_database/utils/constants/constants.dart';
+import '../../controller/home/bloc/home_bloc.dart';
 import 'widgets/cardmenu.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final HomeBloc homeBloc = HomeBloc();
 
   @override
@@ -22,22 +29,28 @@ class HomeScreen extends StatelessWidget {
           } else if (state is HomeNavigateToStudentListPageActionState) {
             GoRouter.of(context)
                 .pushNamed(RoutingConstants.studentlistRouteName);
-          }else if (state is HomeNavigateToSettingActionState) {
-            GoRouter.of(context)
-                .pushNamed(RoutingConstants.settingsRouteName);
-          }},
+          } 
+        },
         builder: (context, state) {
           return Scaffold(
               appBar: AppBar(
                 title: Constants.homeTitleString,
-                actions: [
-                  IconButton(
-                    onPressed: () {
-                      homeBloc.add(HomeNavigateToSettingsEvent());
-                    },
-                    icon: Constants.settings,
-                  )
-                ],
+              ),
+              drawer: Drawer(
+                child: ListView(
+                  children: <Widget>[
+                    ListTile(
+                        title: Text("Dark Theme"),
+                        trailing: Switch(
+                            value: context.read<ThemeBloc>().state ==
+                                ThemeMode.dark,
+                            onChanged: (value) {
+                              context
+                                  .read<ThemeBloc>()
+                                  .add(ThemeChanged(value));
+                            }))
+                  ],
+                ),
               ),
 
               // drawer: const Drawer(),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:student_database/features/home/bloc/home_bloc.dart';
+
 import 'package:student_database/utils/constants/constants.dart';
+
+import '../../../controller/home/bloc/home_bloc.dart';
 
 class CardWidget extends StatelessWidget {
   final HomeBloc homeBloc;
